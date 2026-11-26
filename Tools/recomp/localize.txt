@@ -1,0 +1,180 @@
+# Leaf functions translated with their registers in local variables (ppc_recomp.py localize_body): the hottest
+# matrix/vector code in the console profiler (0.3.6 log, 45 busy windows: ~19% of the game's CPU). Each is checked
+# against its plain translation by Source/hle/hle_fasttest.cpp (game:\lm360_fasttest.txt).
+801E6AC8  # PSMTXConcat 5.8%
+801FE804  # WriteMTXPS4x3 4.0%
+801E7504  # PSVECSubtract 2.8%
+801E75A0  # fn_801E75A0 1.7%
+801E75DC  # PSVECDotProduct 1.4%
+801FE838  # WriteMTXPS3x3from3x4 1.4%
+801E74E0  # PSVECAdd 1.3%
+801E7528  # fn_801E7528 0.6%
+# GX library setters and game leaf functions from the same profile (not run by the self-test: they write the GX
+# FIFO and globals; same generator as the functions above, which the self-test proves bit for bit).
+801FCA04  # GXSetTevOrder 1.24%
+801F87D8  # __GXSetVAT 1.22%
+801FA96C  # GXSetChanCtrl 1.21%
+8000A6D4  # fn_8000A0D0 1.19%
+801FA508  # GXLoadLightObjImm 1.13%
+801FB1CC  # GXLoadTexObjPreLoaded 1.06%
+800033B4  # __fill_mem 1.00%
+8000B24C  # fn_8000AC48 0.98%
+801FB030  # GXInitTexObjLOD 0.77%
+801FC544  # GXSetTevAlphaOp 0.76%
+801F93B4  # GXBegin 0.71%
+801F8BCC  # GXSetTexCoordGen2 0.63%
+801FB684  # __SetSURegs 0.62%
+801FC380  # GXSetTevColorIn 0.52%
+801F9490  # __GXSendFlushPrim 0.52%
+801F7644  # fn_801F7644 0.48%
+801F8100  # GXSetVtxAttrFmt 0.40%
+# more functions seen in the console profiler (0.3.6 log); the generator skips the non-leaf ones
+801A2160  # DSPReleaseHalt__Fv
+801A0AAC  # UpdateDSP__Fv
+801FE8E8  # GXLoadPosMtxImm
+800ECD2C  # fn_800E98E0__Q24Koga9EnManagerFv
+800E8E50  # fn_800E5A00__Q24Koga9EnManagerFv
+801A8300  # __ByteRead__FP5seqp_
+801FE928  # GXLoadNrmMtxImm
+801A8DE0  # SeqUpdate
+801A8E64  # SeqUpdate
+8005C1C4  # fn_80059710
+801FEA1C  # GXLoadTexMtxImm
+801FB3B0  # GXLoadTexObj
+8000339C  # memset
+8005C1D0  # fn_80059710
+8005B330  # fn_80058850
+8007AA00  # fn_8007A9E0
+801A8BCC  # Jam_SeqmainNote
+801F9398  # __GXSetDirtyState
+800C0A8C  # fn_800BD560
+801FB8A8  # __GXSetSUTexRegs
+80094F70  # fn_80091A70
+800C0A5C  # fn_800BD560
+800C0A68  # fn_800BD560
+801D70FC  # findFsResource__10JKRArchiveCFPCcUl
+801C3A3C  # fn_801C043C
+8001835C  # fn_80017124
+801D738C  # store__Q210JKRArchive8CArcNameFPCcc
+80098FA4  # fn_80095FE0
+801C3A50  # fn_801C0490
+8008BF64  # fn_80088F8C
+800BFED4  # getValue__Q24Koga8ToolDataCFiPCcPUl
+801A8768  # Jam_SeqmainNote
+8005D67C  # fn_8005AC34
+8013327C  # fn_8012FD14
+80133248  # fn_8012FD14
+8005F00C  # fn_8005C464
+801FEA28  # GXLoadTexMtxImm
+8020ACE0  # fabsf__Ff
+801F7D70  # __GXSetVCD
+801A71C0  # sinf3__Ff
+801FC484  # GXSetTevColorOp
+8013326C  # fn_8012FD14
+801F9444  # GXBegin
+800C09AC  # fn_800BD560
+8008C0FC  # fn_80089164
+80095198  # fn_80092164
+801FE898  # WriteMTXPS4x2
+8005EDBC  # fn_8005C374
+801FC604  # GXSetTevColor
+801FEC94  # __GXSetMatrixIndex
+801F9464  # GXBegin
+801E7544  # PSVECNormalize
+801FE704  # GXCallDisplayList
+8006073C  # fn_8005DCA0
+8006D208  # fn_8006A4C0
+80093194  # fn_8008FFC0
+801AABC0  # Jam_TryInterrupt
+8008BFE8  # fn_80088FF4
+801F8E8C  # GXSetTexCoordGen2
+800C0D44  # fn_800BD870
+80095148  # fn_80092164
+801E05E0  # OSReceiveMessage
+801FC400  # GXSetTevAlphaIn
+801E6A94  # PSMTXCopy
+80095604  # getLadderName__Fi
+80008DC0  # fn_80008654__FP16unk_lbl_803A3820
+8005E3B8  # fn_8005B660
+801A0280  # audioproc__FPv
+80096474  # getLadderPositionByIndex__FPQ29JGeometry8TVec3<f>iUl
+8006AAC8  # fn_80067D60
+800E8A74  # fn_800E5600__Q24Koga9EnManagerFl
+801A38F8  # UpdateEffecterParam__FP3jc_
+80095178  # fn_80092164
+8005E3A8  # fn_8005B660
+801DA208  # getWidth__10JUTResFontCFv
+80133224  # fn_8012FD14
+801CB0BC  # viewCalc__8J3DModelFv
+80133064  # fn_8012F9C8
+800C0D38  # fn_800BD870
+800C0448  # fn_800C0384
+801F74EC  # __GXXfVtxSpecs
+801F845C  # GXSetVtxAttrFmtv
+801E6D08  # MTXRotRad
+8000AA10  # fn_8000A40C__FffffffPA4_fllUl
+8019DFA4  # fn_8019DF54
+80018C6C  # fn_80017FB4
+8008C46C  # fn_800894D4
+801DA1E0  # getHeight__10JUTResFontCFv
+8000935C  # fn_80008D58
+8001883C  # fn_80017ADC
+8001E1B0  # fn_8001D4C0
+80197DA4  # fn_801947E8
+80095158  # fn_80092164
+8005ED1C  # fn_8005C2D4
+8005EE9C  # fn_8005C374
+801FC838  # GXSetTevSwapMode
+80132760  # fn_8012F2E4
+801E8D00  # DVDReadPrio
+8000713C  # fn_800071D0__18LMDvdFileInfoBlockFP18LMDvdFileInfoBlock
+800BD6EC  # hashStringSeperate__FPCc
+801E6D30  # MTXRotRad
+801A845C  # __ConditionCheck__FP5seqp_Uc
+801A10B0  # DVDReadMutex__FP11DVDFileInfoPvllPc
+8020B25C  # cosf
+8012CF64  # fn_80129A98
+801DA510  # getFontCode__10JUTResFontCFi
+800DDF8C  # fn_800DAB18
+80009C3C  # fn_80009638__Fv
+801B2F14  # parse__8J2DPrintFPCUciiPUsRQ28J2DPrint5TSizeUcb
+801E75FC  # PSVECCrossProduct
+80132A40  # fn_8012F574
+800C0CBC  # fn_800BD870
+800062EC  # fn_80006270
+801FE8BC  # GXLoadPosMtxImm
+801FA7B8  # GXSetChanMatColor
+8001E1A0  # fn_8001D4C0
+8005D330  # fn_8005A820
+800643E8  # fn_800613C8
+8005E450  # fn_8005B660
+801E6D4C  # fn_801E6D4C
+801DA1FC  # getAscent__10JUTResFontCFv
+8000C774  # fn_8000C188
+801F8B30  # GXSetArray
+8009AEA4  # fn_8009AEA4
+80132994  # fn_8012F2E4
+801A3954  # UpdateEffecterParam__FP3jc_
+80060778  # fn_8005DCA0
+8005DB80  # fn_8005AF0C
+8020B3F0  # sinf
+801A9680  # Jam_ReadRegDirect
+801DE950  # DCFlushRangeNoSync
+801328C4  # fn_8012F2E4
+801DA480  # getWidthEntry__10JUTResFontCFiPQ27JUTFont6TWidth
+80197824  # fn_80194268
+801E8C10  # DVDReadAsyncPrio
+80198384  # fn_80194A80
+80197D10  # fn_801946A4
+80161780  # fn_8015E2E8
+801E0518  # OSSendMessage
+8009632C  # getLadderPathEntryCount__Fi
+80093128  # fn_8008FFC0
+801F79A4  # fn_801F79A4
+800C05A4  # fn_800C04D0
+8005B828  # fn_80058C30
+8005DCBC  # fn_8005AF0C
+801E0AB0  # OSUnlockMutex
+801A1864  # DVDT_LoadtoARAM_Main__FPv
+801D7158  # findFsResource__10JKRArchiveCFPCcUl
+80006D08  # checkCurUnk0__9LMDvdFileFv

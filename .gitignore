@@ -1,0 +1,21 @@
+# Game data and anything built from it: never commit.
+GameData/
+Builds/
+Reference/
+Tests/
+Logs/
+*.rvz
+*.iso
+*.gcm
+*.dol
+*.xex
+*.pdb
+*.obj
+*.lib
+*.gci
+*.raw
+*.log
+lm_env.txt
+pad_script.txt
+__pycache__/
+*.pyc

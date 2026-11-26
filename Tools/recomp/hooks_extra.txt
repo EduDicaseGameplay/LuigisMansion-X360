@@ -1,0 +1,37 @@
+# Game-side hooks (appended by make_hooks.py). JAudio's DSP driver: the audio DSP microcode is not
+# emulated yet, so its boot handshake and command mailbox are answered by Source/hle/hle_audio.cpp
+# (silent audio until the microcode stand-in exists; same entry points the PC port hooks).
+DspBoot__Fv 801A1D00
+DSPSendCommands__FPUlUl 801A20C0
+DSPReleaseHalt__Fv 801A2160
+DSPWaitFinish__Fv 801A21C0
+DiplSec__FUl 801A2340
+Jac_imixcopy__FPsPsPsl 8019FBE0
+# JAI sound starts run with interrupts off: an interrupt in the middle corrupted the SE lists
+# (documented by the PC port, docs/AUDIO.md "JAI sound-effect lists"). Wrappers in hle_audio.cpp.
+fn_8019754C 8019AB08
+fn_80197810 8019ADCC
+fn_80197B30 8019B0EC
+# Counted for diagnostics, then the translated body runs (hle_gx.cpp).
+GXCopyDisp 801F9E3C
+# VI callback setters the matcher left unnamed (same 0x44-byte bodies; they store r13+0x1800 / +0x1804, the
+# USA order is pre then post). Without them the retrace HLE never called the game's XFB switch (fn_80007604).
+VISetPreRetraceCallback 801EBDF8
+VISetPostRetraceCallback 801EBE3C
+# LM-17: room build window and the DVD thread model-load callback (Source/hle/hle_util.cpp).
+fn_801713CC 80174B3C
+fn_8002F4DC 800307E4
+# Widescreen: camera side culling planes widened with the picture (Source/hle/hle_widescreen.cpp).
+fn_80008D58 8000935C
+# Native hot functions (Source/hle/hle_perf.cpp; found by the sampling profiler).
+searchItemInfo__Q24Koga8ToolDataCFPCc 800C01A8
+fn_8009AEA4 8009AEA4
+store__Q210JKRArchive8CArcNameFPCc 801D72EC
+store__Q210JKRArchive8CArcNameFPCcc 801D738C
+# Widescreen: the shadow-map pass drawn without Hor+ (Source/hle/hle_widescreen.cpp).
+fn_8005D984 800603F0
+fn_8005DBE4 80060650
+getValue__Q24Koga8ToolDataCFiPCcPUl 800BFED4
+findTypeResource__10JKRArchiveCFUlPCc 801D6FD4
+# Audio: JAudio DSP overload check stops a voice whenever its audio thread was held up (Source/hle/hle_audio.cpp).
+BreakLowerActiveDSPchannel__FUc 801A4980
